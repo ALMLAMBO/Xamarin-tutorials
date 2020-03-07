@@ -25,9 +25,7 @@ namespace SimpleListView {
 
             myListView = FindViewById<AbsListView>(Resource.Id.myListView);
 
-            ArrayAdapter<string> adapter = new ArrayAdapter<string>
-                (this,
-                Android.Resource.Layout.SimpleListItem1, items);
+            MyListViewAdapter adapter = new MyListViewAdapter(this, items);
 
             myListView.Adapter = adapter;
         }
