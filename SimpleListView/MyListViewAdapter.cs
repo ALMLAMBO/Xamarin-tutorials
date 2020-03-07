@@ -29,7 +29,19 @@ namespace SimpleListView {
 		}
 
 		public override View GetView(int position, View convertView, ViewGroup parent) {
-			throw new NotImplementedException();
+			View row = convertView;
+
+			if(row == null) {
+				row = LayoutInflater.From(context)
+					.Inflate(Resource.Layout.listview_row, null, false);
+			}
+
+			TextView txtName = row.FindViewById<TextView>
+				(Resource.Id.txtName);
+
+			txtName.Text = items[position];
+
+			return row;
 		}
 	}
 }
